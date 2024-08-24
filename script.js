@@ -59,4 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const confettis = document.querySelectorAll('.confetti');
         confettis.forEach(confetti => confetti.remove());
     }
+
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            backgroundMusic.pause(); // 當標籤頁不可見時暫停音樂
+        } else if (isCardOpened) {
+            backgroundMusic.play(); // 當標籤頁重新可見時，如果卡片是開啟的狀態，則繼續播放音樂
+        }
+    });
 });
