@@ -12,10 +12,14 @@
 </head>
 
 <body>
+    <!-- Adding the audio element for background music -->
+    <audio id="backgroundMusic" src="birthday_song.mp3"></audio>
+
     <div class="birthdayCard">
+        <div class="confetti"></div>
         <div class="cardFront">
             <div class="front-text">
-                <h2 class="text1">祝福</h3>
+                <h2 class="text1">祝福</h2>
                 <h2 class="text2"><span>媽媽</span> 生日快樂</h2>
             </div>
             <div class="wrap-deco">
@@ -46,16 +50,7 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const birthdayCard = document.querySelector('.birthdayCard');
-    
-            birthdayCard.addEventListener('click', function() {
-                birthdayCard.classList.toggle('active');
-            });
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
