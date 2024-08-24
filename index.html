@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>Birthday Card</title>
+</head>
+
+<body>
+    <div class="birthdayCard">
+        <div class="cardFront">
+            <div class="front-text">
+                <h2 class="text1">祝福</h3>
+                <h2 class="text2"><span>媽媽</span> 生日快樂</h2>
+            </div>
+            <div class="wrap-deco">
+                <div class="decorations"></div>
+                <div class="decorationsTwo"></div>
+            </div>
+            <div class="wrap-decoTwo">
+                <div class="decorations"></div>
+                <div class="decorationsThree"></div>
+            </div>
+            <div class="plate">
+                <div class="cake"></div>
+                <div class="flame"></div>
+            </div>
+        </div>
+        <div class="cardInside">
+            <div class="inside-text">
+                <h3 class="happy">媽媽</h3>
+                <h2 class="bday">48歲生日快樂</h2>
+                <div class="seperator-container">
+                    <div class="seperator"></div>
+                </div>
+            </div>
+            <div class="wishes">
+                <p>親愛的媽媽,</p>
+                <p>生辰之禧，自卅載始，母負育吾兒之責，歷百般之沉浮，終至我入學之時。願母他日不復為吾憂慮，且為己而生。母之多年操勞，感懷莫甚。謝之，母親大人。</p>
+                <p class="name">祐任</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const birthdayCard = document.querySelector('.birthdayCard');
+    
+            birthdayCard.addEventListener('click', function() {
+                birthdayCard.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

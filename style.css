@@ -1,0 +1,262 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #00bbf9;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.birthdayCard {
+    position: relative;
+    width: 300px; /* 原始宽度的增大 */
+    height: 420px; /* 原始高度的增大 */
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px) scale(1.2); /* 使用 scale 放大 */
+    transition: 4s;
+}
+
+.birthdayCard.active {
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .15), 0 10px 100px rgba(0, 0, 0, 0.3);
+}
+
+.birthdayCard.active .cardFront {
+    transform: rotateY(-160deg);
+}
+
+.birthdayCard.active .front-text,
+.birthdayCard.active .wrap-deco,
+.birthdayCard.active .wrap-decoTwo,
+.birthdayCard.active .plate {
+    display: none;
+}
+
+.front-text {
+    position: relative;
+    top: 280px; /* 调整顶部位置 */
+    line-height: 70%;
+}
+
+.text1 {
+    text-align: center;
+}
+
+.text2 {
+    text-align: center;
+}
+
+.text2 span {
+    font-size: 1.3em; /* 放大字体 */
+    color: #f15bb5;
+}
+
+.cardFront {
+    position: relative;
+    background-color: #fff;
+    width: 100%; /* 使其宽度自适应 */
+    height: 100%; /* 使其高度自适应 */
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1);
+    transition: .4s;
+}
+
+.happy,
+.toyou {
+    position: relative;
+    text-align: center;
+    font-size: 25px; /* 放大字体 */
+}
+
+.happy {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.bday {
+    margin: 0;
+    margin-top: 5px;
+    position: relative;
+    font-family: arial;
+    font-size: 22px; /* 放大字体 */
+    color: rgb(236, 118, 227);
+    text-align: center;
+}
+
+.wrap-deco {
+    position: absolute;
+    top: -280px; /* 调整位置 */
+    left: -250px; /* 调整位置 */
+}
+
+.decorations {
+    position: absolute;
+    width: 480px; /* 增大装饰的尺寸 */
+    height: 360px;
+    border: 3px solid #333;
+    border-radius: 50%;
+}
+
+.decorations:before,
+.decorations:after,
+.decorationsTwo:before,
+.decorationsTwo:after,
+.decorations:after,
+.decorationsThree:before,
+.decorationsThree:after {
+    content: "";
+    position: absolute;
+    border-left: 24px solid transparent; /* 增大边框 */
+    border-right: 24px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.decorations:before {
+    border-top: 48px solid #f15bb5;
+    top: 356px; /* 调整位置 */
+    left: 252px; /* 调整位置 */
+    transform: rotate(-5deg);
+}
+
+.decorations:after {
+    border-top: 48px solid #f4d35e;
+    top: 343px;
+    left: 312px;
+    transform: rotate(-17deg);
+}
+
+.decorationsTwo:before {
+    border-top: 48px solid #00f5d4;
+    top: 318px;
+    left: 378px;
+    transform: rotate(-30deg);
+}
+
+.decorationsTwo:after,
+.decorationsThree:after {
+    border-top: 48px solid #9b5de5;
+    top: 288px;
+    left: 425px;
+    transform: rotate(-42deg);
+}
+
+.wrap-decoTwo {
+    transform: scaleX(-1);
+    position: absolute;
+    top: -280px; /* 调整位置 */
+    left: 534px; /* 调整位置 */
+}
+
+.decorationsThree:before {
+    border-top: 48px solid #00bbf9;
+    top: 319px;
+    left: 378px;
+    transform: rotate(-30deg);
+}
+
+.plate {
+    position: absolute;
+    width: 156px; /* 增大尺寸 */
+    height: 6px; /* 增大尺寸 */
+    background-color: #00bbf9;
+    left: 72px; /* 调整位置 */
+    top: 256px; /* 调整位置 */
+}
+
+.cake {
+    position: absolute;
+    overflow: hidden;
+    width: 120px; /* 增大尺寸 */
+    height: 60px; /* 增大尺寸 */
+    background-color: #f15bb5;
+    border-radius: 12px 12px 0 0;
+    top: -60px;
+    left: 18px; /* 调整位置 */
+    box-shadow: inset 0 -18px #f9c74f, inset 0 18px #432818;
+}
+
+.cake:before {
+    content: "";
+    position: absolute;
+    background-color: #432818;
+    width: 12px; /* 增大尺寸 */
+    height: 24px; /* 增大尺寸 */
+    top: 6px;
+    border-radius: 24px;
+    box-shadow: 12px 6px #f15bb5, 24px 0px #432818, 36px 2px #f15bb5, 48px 6px #432818, 60px 6px #f15bb5, 72px 0px #432818, 84px 6px #f15bb5, 96px 6px #432818, 108px 6px #f15bb5;
+}
+
+.plate:before {
+    content: "";
+    position: absolute;
+    background: repeating-linear-gradient(-45deg, #9b5de5, #9b5de5 3px, #00f5d4 3px, #00f5d4 6px);
+    width: 8px; /* 增大尺寸 */
+    height: 30px; /* 增大尺寸 */
+    top: -90px;
+    left: 72px; /* 调整位置 */
+}
+
+.plate:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 6px; /* 增大尺寸 */
+    background-color: #333;
+    top: -96px; /* 调整位置 */
+    left: 76px; /* 调整位置 */
+}
+
+.flame {
+    position: absolute;
+    background-color: #fb5607;
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    transform: rotate(-45deg);
+    width: 18px; /* 增大尺寸 */
+    height: 18px; /* 增大尺寸 */
+    opacity: 0.7;
+    top: -110px; /* 调整位置 */
+    left: 67px; /* 调整位置 */
+}
+
+.cardInside {
+  position: absolute;
+  background-color: #fff;
+  width: 100%; /* 使其宽度自适应 */
+  height: 100%; /* 使其高度自适应 */
+  z-index:-1;
+  left:0;
+  top:0;
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+}
+
+.inside-text {
+  position: relative;
+}
+
+.seperator-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.seperator {
+    width: 60%;
+    border: 1px solid rgba(0, 0, 0, .1);
+    margin: 15px 0;
+}
+
+.wishes {
+  margin: 30px; /* 调整边距 */
+}
+
+p {
+  font-family: 'Brush Script MT', cursive;
+  color: #333;
+  font-size: 18px; /* 放大字体 */
+}
+
+.name {
+  margin-left:180px; /* 调整位置 */
+}
